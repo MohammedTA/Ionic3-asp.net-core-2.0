@@ -1,0 +1,138 @@
+@font-face {
+    font-family: 'Din Next';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../assets/fonts/din-next/regular/din-next.otf);
+}
+@font-face {
+    font-family: 'Din Next Bold';
+    font-style: bold;
+    font-weight: 700;
+    src: url(../assets/fonts/din-next/bold/din-next.otf);
+}
+body{
+        font-family: "Din Next"!important;
+
+}
+ion-alert, ion-content, ion-header {
+    font-family: "Din Next"!important;
+}
+
+page-home .toolbar-title {
+    font-family: "Din Next Bold"!important;
+}
+
+ion-action-sheet{
+    font-family: "Din Next"!important;
+}
+
+ion-menu * {
+    color: #666!important;
+}
+
+
+
+
+
+ion-navbar {
+    border-bottom: solid #d8bf67 3px!important;
+    height: 70px;
+}
+.toolbar-md-primary .toolbar-background-md {
+    background: #c4ab55;
+}
+
+.picker-md .picker-button, .picker-md .picker-button.activated {
+    margin: 0;
+    height: 44px;
+    color: #c4ab55;
+    background: 0 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.button-clear-md:hover:not(.disable-hover) {
+    background-color: rgba(158,158,158,.1) !important;
+}
+.picker-md .picker-opt.picker-opt-selected, .picker-md .picker-prefix, .picker-md .picker-suffix {
+    color: #c4ab55;
+}
+html[dir=rtl] .back-button-icon.icon-md.back-button-icon-md.ion-md-arrow-back {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.card-ios, .card-md, .card-wp {
+    margin: 10px 0 0!important;
+    width: 100%;
+}
+.card-md {
+    box-shadow: none;
+}
+ion-content {
+    background-color: #f4f4f4!important;
+}
+ion-card ion-card-header {
+    border-bottom: 1px solid rgba(128,128,128,.22)!important;
+}
+
+.item-ios .radio-ios, .item-md .radio-md {
+    position: absolute!important;
+    margin: 0!important;
+}
+
+.radio-md .radio-checked, .radio-md-primary .radio-checked {
+    border-color: #c4ab55;
+}
+.radio-md .radio-inner, .radio-md-primary .radio-inner {
+    background-color: #c4ab55;
+}
+
+.item-radio .input-wrapper ion-label {
+    margin-right: 25px!important;
+}
+.item-radio-checked.item-md ion-label, .item-radio-md-primary.item-radio-checked ion-label {
+    color: #c4ab55;
+}
+
+ion-card ion-label.text-sm {
+    font-size: .8em!important;
+    margin: 0!important;
+    color: #c4ab55!important;
+}
+.action-sheet-group {
+    overflow: hidden;
+}
+.toolbar-content-wp, page-furniture ion-select, page-hefzneama ion-select, page-requesthelp ion-select, page-volunteer ion-select {
+    max-width: 100%;
+}
+
+.checkbox-md-bg .checkbox-checked {
+    border-color: #c4ab55;
+    background-color: #c4ab55;
+}
+.alert-md .button-inner {
+    color:#c4ab55
+}
+
+.alert-md [aria-checked=true] .alert-radio-icon {
+    border-color: #c4ab55;
+}
+
+.row[justify-content-center]{
+    text-align: center;
+}
+
+.alert-md .alert-radio-icon,.alert-checkbox-icon {
+    left: -15px!important;
+}
+
+.alert-md .alert-radio-inner,.alert-checkbox-inner {
+    background-color: #c4ab55;
+}
+.alert-md [aria-checked=true] .alert-radio-label, .alert-checkbox-label {
+    color: #c4ab55;
+}
+.alert-md [aria-checked=true] .alert-checkbox-icon{
+    border-color: #c4ab55;
+    background-color: #c4ab55;
+}

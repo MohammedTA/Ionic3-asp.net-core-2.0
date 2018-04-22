@@ -1,0 +1,195 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      حجز المواعيد لجلب الاثاث
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="saveData()" [formGroup]="todo">
+    <ion-card>
+      <ion-card-header>
+        ملاحظات
+      </ion-card-header>
+      <ion-card-content>
+        <ul>
+          <li>سيتم الالتزام بالاثاث المسجل بالطلب فقط</li>
+          <li>يشترط في استلام التبرعات ان تكون مفككة وجاهزة للتحميل وذلك لسرعة خدمتكم ولكم فائق الشكر</li>
+        </ul>
+      </ion-card-content>
+    </ion-card>
+
+
+    <ion-card>
+      <ion-row>
+        <ion-col col-4>
+          <ion-label>تصنيف الأثاث</ion-label>
+        </ion-col>
+        <ion-col col-8="">
+          <ion-list radio-group formControlName="cat" [(ngModel)]="selectedCatId">
+            <ion-item *ngFor='let item of categories'>
+              <ion-label>{{item.categoryname}} </ion-label>
+              <ion-radio (click)="getItems($event)" value="{{item.catid}}"></ion-radio>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-row>
+        <ion-col col-4>
+          <ion-label>الأثاث</ion-label>
+        </ion-col>
+        <ion-col col-8="">
+          <ion-select multiple="true" [(ngModel)]="furniture.Items" formControlName="item" canceltext="الغاء" interface="action-sheet" oktext="موافق" placeholder="اضغط هنا لاختيار الأثاث">
+            <div *ngFor='let item of items'>
+              <ion-option [value]="{AssetNumber: item.AssetNumber, AssetName: item.itemname}"> {{item.itemname}}
+              </ion-option>
+              <ion-input placeholder="عدد القطع" formControlName="AssetNumber" [(ngModel)]="item.AssetNumber"></ion-input>
+            </div>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-row>
+        <ion-col col-12>
+              <ion-grid>
+                  <ion-row justify-content-center>
+                      <ion-col col-12>
+                        الأثاث المختار
+                      </ion-col>
+                  </ion-row>
+                  <ion-row justify-content-center *ngIf="!furniture.Items.length">
+                      <ion-col col-12>
+                        <h6>لا يوجد قطع أثاث مختارة</h6>
+                      </ion-col>
+                  </ion-row>
+                <ion-row *ngFor='let item of furniture.Items' align-items-center>
+                  <ion-col col-4 text-wrap>
+                    {{item.AssetName}}
+                  </ion-col>
+                  <ion-col col-8>
+                    <ion-input type="number" placeholder="أدخل عدد القطع" 
+                    formControlName="AssetNumber" 
+                    [(ngModel)]="item.AssetNumber"></ion-input>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-row>
+        <ion-col col-5>
+          <ion-label> التاريخ</ion-label>
+        </ion-col>
+        <ion-col col-7>
+          
+          <ion-datetime min="{{minDate}}" max="2030" placeholder="اضغط هنا لإختيار التاريخ" formControlName="day" displayFormat="DD.MM.YYYY" [(ngModel)]="furniture.Day">
+          </ion-datetime>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-row>
+        <ion-col col-5>
+          <ion-label> الوقت</ion-label>
+        </ion-col>
+        <ion-col col-7>
+          <ion-select canceltext="الغاء" [(ngModel)]="furniture.Hour" (ionChange)="setDuCode()" formControlName="hour" interface="action-sheet"
+          oktext="موافق" placeholder="  اضغط هنا لإختيار الوقت">
+          <ion-option *ngFor='let item of HourList' value="{{item.durname}}"> الساعة {{item.durname}} </ion-option>
+        </ion-select>
+
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+
+    <ion-card>
+      <ion-row>
+        <ion-col col-5>
+          <ion-label class="label label-md">العنوان</ion-label>
+        </ion-col>
+        <ion-col col-7>
+          <ion-input formControlName="Address" [(ngModel)]="furniture.Address" style="direction:rtl;" placeholder="العنوان" type="text"
+            class="input input-md ng-valid ng-touched ng-dirty">
+          </ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-row>
+        <ion-col col-4>
+          <ion-label text-wrap>الحي (الدمام فقط)</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-select  canceltext="الغاء" oktext="موافق" formControlName="square" [(ngModel)]="furniture.Square" placeholder="اضغط هنا لاختيار الحي">
+            <ion-option *ngFor='let zone of zonesItems' value="{{zone.name}}"> {{zone.name}} </ion-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-row>
+        <ion-col col-5>
+          <ion-label class="label label-md">الاسم</ion-label>
+        </ion-col>
+        <ion-col col-7>
+          <ion-input formControlName="Name" [(ngModel)]="furniture.Name" style="direction:rtl;" placeholder="الاسم" type="text" class="input input-md ng-valid ng-touched ng-dirty">
+          </ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-row>
+        <ion-col col-5>
+          <ion-label class="label label-md">الجوال</ion-label>
+        </ion-col>
+        <ion-col col-7>
+          <ion-input  formControlName="Jawwal" style="direction:rtl;" [(ngModel)]="furniture.Mobile" placeholder="05XXXXXXXX" type="number"
+            class="input input-md ng-valid ng-touched ng-dirty">
+          </ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-row>
+        <ion-col col-5>
+          <ion-label class="label label-md">الهاتف</ion-label>
+        </ion-col>
+        <ion-col col-7>
+          <ion-input formControlName="Phone" [(ngModel)]="furniture.Phone" style="direction:rtl;" placeholder="01XXXXXXXX" type="number"
+            class="input input-md ng-valid ng-touched ng-dirty">
+          </ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+
+    <ion-card>
+      <ion-card-header>
+        <h3 text-center>ملاحظات</h3>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-textarea placeholder="ملاحظات" formControlName="Note"  [(ngModel)]="furniture.Notes" rows="6">
+        </ion-textarea>
+      </ion-card-content>
+    </ion-card>
+
+
+    <button block color="dark" id="submit_order" ion-button class="button button-md button-default button-default-md button-block button-block-md button-md-dark">
+      <span class="button-inner">ارسل الطلب</span>
+    </button>
+  </form>
+</ion-content>

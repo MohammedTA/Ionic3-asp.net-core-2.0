@@ -1,0 +1,184 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      طلب مشاركة تطوعية
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="saveData()" [formGroup]="todo2">
+  <ion-card>
+    <ion-row>
+      <ion-col col-5>
+        <ion-label >الاسم</ion-label>
+      </ion-col>
+      <ion-col col-7>
+        <ion-input formControlName="Name" [(ngModel)]="volunteer.Name" style="direction:rtl;" placeholder="الاسم" type="text" >
+        </ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <ion-row>
+      <ion-col col-5>
+        <ion-label >رقم الهوية</ion-label>
+      </ion-col>
+      <ion-col col-7>
+        <ion-input formControlName="idNumber" [(ngModel)]="volunteer.Nid"  style="direction:rtl;" placeholder="رقم الهوية" type="number" >
+        </ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <ion-row>
+      <ion-col col-5>
+        <ion-label >الجوال</ion-label>
+      </ion-col>
+      <ion-col col-7>
+        <ion-input formControlName="Jawwal" placeholder="05XXXXXXXX" [(ngModel)]="volunteer.Mobile"  style="direction:rtl;" type="number" >
+        </ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <ion-row>
+      <ion-col col-5>
+        <ion-label >البريد الالكتروني</ion-label>
+      </ion-col>
+      <ion-col col-7>
+        <ion-input formControlName="Email" [(ngModel)]="volunteer.Email"  style="direction:rtl;" placeholder=" البريد الالكتروني" type="text" >
+        </ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <ion-row>
+      <ion-col col-5>
+        <ion-label > الجنسية</ion-label>
+      </ion-col>
+      <ion-col col-7>
+        <ion-input formControlName="nationality" [(ngModel)]="volunteer.Natinality"  style="direction:rtl;" placeholder="  الجنسية" type="text" >
+        </ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <ion-row>
+      <ion-col col-5>
+        <ion-label > العنوان</ion-label>
+      </ion-col>
+      <ion-col col-7>
+        <ion-input formControlName="address" [(ngModel)]="volunteer.Address"  style="direction:rtl;" placeholder="  العنوان" type="text" >
+        </ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <h3>المؤهلات العلمية</h3>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-textarea [(ngModel)]="volunteer.Certifcates"  formControlName="certifcates" placeholder="المؤهلات العلمية" rows="6"></ion-textarea>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <h3> المهارات والتخصصات التي تحملها</h3>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-textarea [(ngModel)]="volunteer.Skils"  formControlName="skills"  placeholder=" المهارات والتخصصات التي تحملها" rows="6"></ion-textarea>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card>
+    <ion-card-header>
+      <h3>الايام التي ترغب المشاركة فيها</h3>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row>
+        <ion-col col-12>
+            <ion-item *ngFor='let item of days'>
+                <ion-label>{{ item.name }}</ion-label>
+                <ion-checkbox (ionChange)="select(item.id, $event.checked, 1)" value="item.id">
+                  </ion-checkbox>
+              </ion-item>
+          </ion-col>
+        </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+      <ion-row>
+        <ion-col col-5>
+          <ion-label> وقت التبرع </ion-label>
+        </ion-col>
+        <ion-col col-7>
+          <ion-select placeholder="اضغط هنا لاختيار الوقت"  [(ngModel)]="volunteer.Time" formControlName="time" interface="action-sheet">
+            <ion-option>صباحا</ion-option>
+            <ion-option> مساءا</ion-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+        <ion-row>
+          <ion-col col-5>
+            <ion-label> عدد ساعات التطوع </ion-label>
+          </ion-col>
+          <ion-col col-7>
+            <ion-select placeholder="اضغط هنا لاختيار عدد الساعات"  [(ngModel)]="volunteer.Houres" formControlName="Houres" interface="action-sheet">
+              <ion-option>ساعة</ion-option>
+              <ion-option> 2-3 ساعات</ion-option>
+              <ion-option> أكثر من 3 ساعات</ion-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+
+  
+  <ion-card>
+    <ion-card-header>
+      <h3 text-center>ملاحظات</h3>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-textarea placeholder="ملاحظات" [(ngModel)]="volunteer.Notes" formControlName="notes" rows="6">
+      </ion-textarea>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card>
+      <ion-card-header>
+        <h3>البرامج التي ترغب المشاركة فيها</h3>
+      </ion-card-header>
+      <ion-card-content text-wrap>
+          <ion-row>
+            <ion-col col-12>
+                    <ion-item *ngFor='let item of fields'>
+                        <ion-label>{{ item.name }}</ion-label>
+                        <ion-checkbox (ionChange)="select(item.id, $event.checked, 2)" value="item.id">
+                          </ion-checkbox>
+                      </ion-item>
+              </ion-col>
+            </ion-row>
+        </ion-card-content>
+    </ion-card>
+
+
+
+
+  <button block color="dark" id="submit_order" ion-button>
+    ارسل الطلب
+  </button>
+  </form>
+</ion-content>

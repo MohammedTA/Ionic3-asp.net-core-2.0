@@ -1,0 +1,28 @@
+<ion-menu [content]="content">
+        <ion-header class="header header-md">
+                <ion-toolbar class="toolbar toolbar-md toolbar-md-white" color="white"><div class="toolbar-background toolbar-background-md"></div><div class="toolbar-content toolbar-content-md">
+                  <ion-title id="app-menu" class="title title-md"><div class="toolbar-title toolbar-title-md">
+                     <img height="20" src="assets/img/ic_menu_black.png" style="margin-left:10px;" width="20">
+                     القائمة الرئيسية  
+                  </div></ion-title>
+                </div></ion-toolbar>
+              </ion-header>
+    
+        <ion-content>
+          <ion-list>
+            <button style="padding: 15px 5px;" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+                     {{p.title}}
+                     <ion-avatar item-end="" style="display: inherit;">
+                            <img style="height:30px;width:30px;margin:auto;border-radius:0 !important;" src="{{p.icon}}">
+                        </ion-avatar>
+            </button>
+          </ion-list>
+        </ion-content>
+    
+      </ion-menu>
+      <ion-nav #content [root]="rootPage"></ion-nav>
+
+
+
+
+      

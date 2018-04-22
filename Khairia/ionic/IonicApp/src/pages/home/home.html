@@ -1,0 +1,165 @@
+<ion-header class="header header-md">
+  <ion-navbar class="toolbar toolbar-md toolbar-md-primary" color="primary">
+    <div class="toolbar-background toolbar-background-md">
+    </div>
+    <button class="back-button bar-button bar-button-md back-button-md bar-button-default bar-button-default-md" ion-button="bar-button">
+      <span class="button-inner">
+        <ion-icon class="back-button-icon icon icon-md back-button-icon-md ion-md-arrow-back" role="img" aria-label="arrow back">
+        </ion-icon>
+        <span class="back-button-text back-button-text-md">
+        </span>
+      </span>
+      <div class="button-effect">
+      </div>
+    </button>
+    <div class="toolbar-content toolbar-content-md">
+      <img src="assets/img/header_bg.png" style="position: absolute !important;height: 100% !important;" width="100%">
+      <ion-row class="row">
+        <ion-col align-self-center class="col" col-4>
+          <ion-row class="row">
+            <ion-col align-self-center class="col" col-6>
+              <button ion-button (click)="openMenu()">
+                <span class="button-inner">
+                  <ion-avatar item-start>
+                    <img height="25" src="assets/img/ic_menu.png" width="25">
+                    <ion-label class="label label-md">القائمة</ion-label>
+                  </ion-avatar>
+                </span>
+                <div class="button-effect"></div>
+              </button>
+            </ion-col>
+            <ion-col align-self-center class="col" col-6>
+              <button [navPush]="'AboutUsPage'" ion-button>
+                <span class="button-inner">
+                  <ion-avatar item-start>
+                    <img height="25" src="assets/img/ic_about.png" width="25">
+                    <ion-label class="label label-md">عنا</ion-label>
+                  </ion-avatar>
+                </span>
+                <div class="button-effect"></div>
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col align-self-center class="col" col-4>
+          <ion-avatar item-start>
+            <img height="80" src="assets/img/logo.png">
+          </ion-avatar>
+        </ion-col>
+        <ion-col align-self-center class="col" col-4>
+          <ion-row class="row">
+            <ion-col align-self-center class="col" col-6>
+              <button [navPush]="'DonationPage'" class="text-center button button-md button-default button-default-md" ion-button>
+                <span class="button-inner">
+                  <ion-avatar item-start>
+                    <img height="25" src="assets/img/ic_donate.png" width="25">
+                    <ion-label class="label label-md">تبرع</ion-label>
+                  </ion-avatar>
+                </span>
+                <div class="button-effect"></div>
+              </button>
+            </ion-col>
+            <ion-col align-self-center class="col" col-6>
+              <button class="text-center button button-md button-default button-default-md" ion-button>
+                <span class="button-inner">
+                  <ion-avatar item-start>
+                    <img height="25" src="assets/img/ic_share.png" width="25">
+                    <ion-label class="label label-md">مشاركة</ion-label>
+                  </ion-avatar>
+                </span>
+                <div class="button-effect"></div>
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content content-md" no-bounce>
+  <div class="scroll-content">
+    <ion-row class="row" id="top-row">
+      <ion-col class="col" col-12 style="padding:0px;">
+        <ion-slides pager="true" dir="rtl">
+          <ion-slide *ngFor="let slide of slides">
+            <img [src]="slide.image" class="slide-image" />
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="buttons_holder row" id="bottom-row">
+      <ion-col class="col" col-12 no-padding>
+        <ion-row class="row" justify-content-center style="height:50%;">
+          <ion-col class="top-box col" col-4 no-padding>
+            <button ion-button [navPush]="'HefzneamaPage'">
+              <span class="button-inner">
+                <ion-avatar item-start>
+                  <img src="assets/img/main-screen-icons/1.png" style="width:40%;">
+                  <ion-label text-wrap class="label label-md"> لديك فائض طعام؟</ion-label>
+                </ion-avatar>
+              </span>
+              <div class="button-effect"></div>
+            </button>
+          </ion-col>
+          <ion-col class="top-box col" col-4 no-padding>
+            <button ion-button [navPush]="'FurniturePage'" class="button button-md button-default button-default-md">
+              <span class="button-inner">
+                <ion-avatar item-start>
+                  <img src="assets/img/main-screen-icons/2.png" style="width:40%;">
+                  <ion-label text-wrap class="label label-md"> تبرع بأثاثك القديم</ion-label>
+                </ion-avatar>
+              </span>
+              <div class="button-effect"></div>
+            </button>
+          </ion-col>
+          <ion-col class="col" col-4 no-padding>
+            <button ion-button [navPush]="'VolunteerPage'" class="button button-md button-default button-default-md" >
+                <ion-avatar item-start>
+                  <img src="assets/img/main-screen-icons/3.png" style="width:40%;">
+                  <ion-label text-wrap class="label label-md">تطوع معنا</ion-label>
+                </ion-avatar>
+            </button>
+          </ion-col>
+        </ion-row>
+        <hr class="custom">
+        <ion-row class="row" justify-content-center style="height:50%;">
+          <ion-col class="bottom-box col" col-4 no-padding>
+            <button [navPush]="'ServicesPage'" ion-button class="button button-md button-default button-default-md">
+              <span class="button-inner">
+                <ion-avatar item-start>
+                  <img src="assets/img/main-screen-icons/4.png" style="width:40%;">
+                  <ion-label text-wrap class="label label-md">خدمات المستفيدين</ion-label>
+                </ion-avatar>
+              </span>
+              <div class="button-effect"></div>
+            </button>
+          </ion-col>
+          <ion-col class="bottom-box col" col-4 no-padding>
+            <button ion-button [navPush]="'RequestHelpPage'" class="button button-md button-default button-default-md" >
+              <span class="button-inner">
+                <ion-avatar item-start>
+                  <img src="assets/img/main-screen-icons/5.png" style="width:40%;">
+                  <ion-label text-wrap class="label label-md">المساعدات للمحتاجين الجدد</ion-label>
+                </ion-avatar>
+              </span>
+              <div class="button-effect"></div>
+            </button>
+          </ion-col>
+          <ion-col class="col" col-4 no-padding>
+            <button ion-button [navPush]="'TellmePage'" class="button button-md button-default button-default-md">
+              <span class="button-inner">
+                <ion-avatar item-start>
+                  <img src="assets/img/main-screen-icons/6.png" style="width:40%;">
+                  <ion-label text-wrap class="label label-md">دلني على محتاج</ion-label>
+                </ion-avatar>
+              </span>
+              <div class="button-effect"></div>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

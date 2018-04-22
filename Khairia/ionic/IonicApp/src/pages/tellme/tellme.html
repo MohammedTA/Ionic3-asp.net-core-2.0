@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      دلني على محتاج
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="saveData()">
+
+    <ion-card>
+      <ion-card-header text-wrap>
+        الشروط التي يقبل بها المتقدم للمساعدة
+      </ion-card-header>
+      <ion-card-content>
+        <ul>
+          <li>ان يكون لدى المتقدم لدار الخير اثبات رسمي (بطاقة احووال-إقامة سارية المفعول)</li>
+          <li>ان يكون المستفيد من سكان الدمام ولديه عقد ايجار ساري المفعول</li>
+          <li>ان لا يكون عاطلا بدون اي عارض مرضي او اعاقة تمنعه من العمل</li>
+          <li>ان يكون المتقدم ذكر</li>
+        </ul>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header text-wrap>
+        معلومات المحتاج
+      </ion-card-header>
+      <ion-row>
+        <ion-col col-4>
+          <ion-label>اسم المحتاج</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-input name="Pername" [(ngModel)]="needy.Pername" placeholder="اسم المحتاج" type="text">
+          </ion-input>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-4>
+          <ion-label> رقم الجوال</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-input name="Phone" placeholder="05XXXXXXXX" [(ngModel)]="needy.Phone" placeholder="رقم الجوال" type="number">
+          </ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <ion-label text-wrap>الحي (الدمام فقط)</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-select canceltext="الغاء" oktext="موافق" name="Squer" [(ngModel)]="needy.Squer" placeholder="اضغط هنا لاختيار الحي">
+            <ion-option *ngFor='let zone of zonesItems' value="{{zone.name}}"> {{zone.name}} </ion-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header text-wrap>
+        معلومات المبلِّغ
+      </ion-card-header>
+      <ion-row>
+        <ion-col col-4>
+          <ion-label> الاسم</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-input name="Sendername" [(ngModel)]="needy.Sendername" placeholder=" الاسم" type="text">
+          </ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <ion-label> رقم الجوال</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-input name="Senderphone" placeholder="05XXXXXXXX" [(ngModel)]="needy.Senderphone" placeholder="رقم الجوال" type="number">
+          </ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <button block color="dark" id="submit_order" ion-button>
+      ارسل الطلب
+    </button>
+  </form>
+</ion-content>

@@ -1,0 +1,217 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      طلب مساعدة من دار الخير
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="saveData()">
+    <ion-card>
+      <ion-card-header>
+        <h3>نوع المساعدة</h3>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row>
+          <ion-col col-12>
+            <ion-item>
+              <ion-label>تسجيل ملف دائم في دار الخير</ion-label>
+              <ion-checkbox [(ngModel)]="help.Registerme" (ionChange)="select($event.checked,'Registerme')" 
+              name="Registerme">
+              </ion-checkbox>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>عيني</ion-label>
+              <ion-checkbox [(ngModel)]="help.Corp" (ionChange)="select($event.checked,'Corp')" 
+               name="Corp">
+              </ion-checkbox>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>نقدي</ion-label>
+              <ion-checkbox [(ngModel)]="help.Money" (ionChange)="select($event.checked,'Money')" 
+               name="Money">
+              </ion-checkbox>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>غذائي</ion-label>
+              <ion-checkbox [(ngModel)]="help.Food" (ionChange)="select($event.checked,'Food')" 
+               name="Food">
+              </ion-checkbox>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-row>
+        <ion-col col-12>
+          <ion-label stacked>رقم الهوية الوطنية/الاقامة الجواز/التأشيرة</ion-label>
+          <ion-input placeholder="رقم الهوية الوطنية/الاقامة الجواز/التأشيرة" [(ngModel)]="help.NId" type="number" name="NId">
+          </ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-row>
+        <ion-col col-4>
+          <ion-label>الاسم</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-input placeholder="الاسم" type="text" [(ngModel)]="help.Name" name="Name">
+          </ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-row>
+        <ion-col col-4>
+          <ion-label>العنوان</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-input placeholder="العنوان" type="text" [(ngModel)]="help.Address" name="Address">
+          </ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-row>
+        <ion-col col-4 text-wrap>
+          <ion-label>تاريخ انتهاء الاثبات</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-datetime min="{{minDate}}" displayFormat="DD.MM.YYYY" max="2030" [(ngModel)]="help.IdExpire" name="IdExpire" placeholder="الرجاء اختيار انتهاء الاثبات">
+          </ion-datetime>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-row>
+        <ion-col col-4>
+          <ion-label>الحي</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-select  [(ngModel)]="help.Place" name="Place"  canceltext="الغاء" oktext="موافق" placeholder="اضغط هنا لاختيار الحي">
+            <ion-option *ngFor='let zone of zonesItems'> {{zone.name}} </ion-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-row>
+        <ion-col col-4>
+          <ion-label>الجوال</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-input  [(ngModel)]="help.Mobile" name="Mobile" placeholder="05XXXXXXXX" placeholder="الجوال" type="number">
+          </ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-row>
+        <ion-col col-4>
+          <ion-label>عدد أفراد الاسرة</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-input  [(ngModel)]="help.FamilyNumber" name="FamilyNumber" placeholder="عدد أفراد الاسرة" type="number">
+          </ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-row>
+        <ion-col col-4>
+          <ion-label>نوع الدخل</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-select  [(ngModel)]="help.IncomeType" name="IncomeType" canceltext="الغاء" interface="action-sheet" oktext="موافق" placeholder="اضغط هنا لاختيار نوع الدخل">
+            <ion-option> حكومي </ion-option>
+            <ion-option> خاص</ion-option>
+            <ion-option> راتب تقاعد</ion-option>
+            <ion-option> راتب ضمان اجتماعي </ion-option>
+            <ion-option> دخول أخرى</ion-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-row>
+        <ion-col col-4>
+          <ion-label> الراتب</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-input   [(ngModel)]="help.Income" name="Income" placeholder="الراتب" type="number">
+          </ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-row>
+        <ion-col col-4>
+          <ion-label> البريد الالكتروني</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-input [(ngModel)]="help.Email" name="Email"  placeholder="البريد الالكتروني" type="text">
+          </ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-row>
+        <ion-col col-4>
+          <ion-label>نوع السكن</ion-label>
+        </ion-col>
+        <ion-col col-8>
+          <ion-select  [(ngModel)]="help.LivType" name="LivType" canceltext="الغاء" interface="action-sheet" oktext="موافق" placeholder="اضغط هنا لاختيار نوع السكن">
+            <ion-option>ملك</ion-option>
+            <ion-option>ايجار</ion-option>
+            <ion-option>شقة</ion-option>
+            <ion-option>دور</ion-option>
+            <ion-option>ملحق</ion-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="help.LivType === 'ايجار'">
+          <ion-col col-4>
+            <ion-label> قيمة الإيجار</ion-label>
+          </ion-col>
+          <ion-col col-8>
+            <ion-input placeholder="قيمة الإيجار" [(ngModel)]="help.Rent" name="Rent" type="text">
+            </ion-input>
+          </ion-col>
+        </ion-row>
+
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <h3 text-center>ملاحظات</h3>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-textarea placeholder="ملاحظات" name="Notes"  [(ngModel)]="help.Notes" rows="6">
+        </ion-textarea>
+      </ion-card-content>
+    </ion-card>
+
+    <button block color="dark" id="submit_order" ion-button>
+      ارسل الطلب
+    </button>
+
+  </form>
+</ion-content>

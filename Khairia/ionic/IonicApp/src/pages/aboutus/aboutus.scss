@@ -1,0 +1,31 @@
+.card-ios, .card-md, .card-wp {
+    margin: 10px 0 0!important;
+    width: 100%;
+}
+.card-md {
+    box-shadow: none;
+}
+ion-content {
+    background-color: #f4f4f4!important;
+}
+ion-card ion-card-header {
+    border-bottom: 1px solid rgba(128,128,128,.22)!important;
+}
+page-aboutus .card-content-ios, page-aboutus .card-content-md, page-aboutus .card-content-wp, page-aboutus ion-card-content {
+    padding: 13px 16px 14px!important;
+    font-size: 1.4rem;
+    line-height: 1.4;
+}
+
+page-aboutus .violet {
+    color: #9d426b;
+}
+
+page-aboutus ol {
+    -webkit-padding-start: 10px;
+    margin: 0;
+}
+html[dir=rtl] .back-button-icon.icon-md.back-button-icon-md.ion-md-arrow-back {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}

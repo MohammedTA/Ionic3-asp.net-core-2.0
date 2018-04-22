@@ -1,0 +1,193 @@
+*{
+  direction: rtl;
+}
+.toolbar-md-primary .toolbar-background-md {
+  background: #c4ab55;
+}
+.toolbar-background-md {
+  border-color: #b2b2b2;
+  background: #f8f8f8;
+}
+.button {
+  text-align: center;
+  appearance: none;
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  vertical-align: top;
+  vertical-align: -webkit-baseline-middle;
+  -webkit-transition: background-color,opacity .1s linear;
+  transition: background-color,opacity .1s linear;
+  -webkit-font-kerning: none;
+  font-kerning: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.toolbar-background {
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  transform: translateZ(0);
+  pointer-events: none;
+  contain: strict;
+}
+
+.toolbar-background, ion-title {
+  -webkit-transform: translateZ(0);
+}
+
+.button-md, .button-md:hover:not(.disable-hover) {
+  background-color: #c4ab55;
+}
+
+page-home .button {
+  font-size: 1.2rem;
+}
+
+page-hefzneama ion-card ion-label.text-sm {
+  font-size: .8em!important;
+  margin: 0!important;
+  color: #c4ab55!important;
+}
+page-hefzneama .card-md p {
+  font-size: 1rem!important;
+  color: gray;
+}
+page-home .swiper-container-horizontal>.swiper-pagination-bullets, page-home .swiper-pagination-custom, page-home .swiper-pagination-fraction {
+  top: 0!important;
+}
+page-home .buttons_holder button {
+  color: #c4ab55;
+  width: 100%;
+  height: 100%;
+  background: 0 0!important;
+  -webkit-box-shadow: none!important;
+  box-shadow: none!important;
+  padding: inherit!important;
+  margin: auto!important;
+}
+page-home .buttons_holder button ion-avatar {
+  width: 95%;
+  margin-top: 10px;
+}
+page-home .buttons_holder button ion-avatar img {
+  display: inline-block!important;
+}
+page-home .buttons_holder button ion-avatar ion-label {
+  font-weight: 700!important;
+  padding-bottom: 5px;
+  margin: 15px 0;
+  font-size: 1.23em;
+}
+page-home .swiper-pagination-bullet-active {
+  background: #fff;
+}
+page-home .toolbar-title {
+  font-style: normal!important;
+  font-weight: 700!important;
+}
+page-home .button {
+  font-size: 1.2rem;
+}
+page-home ion-navbar {
+  font-size: 1.4rem!important;
+  height: 110px;
+}
+page-home ion-navbar ion-col {
+  height: 100%;
+  text-align: center!important;
+}
+page-home ion-navbar ion-col button {
+  background: 0 0!important;
+  -webkit-box-shadow: none!important;
+  box-shadow: none!important;
+  height: inherit!important;
+  padding: inherit!important;
+  margin: auto!important;
+}
+page-home ion-navbar ion-col button ion-avatar {
+  margin-top: 10px;
+}
+page-home ion-navbar ion-col ion-avatar ion-label {
+  margin-right: 0!important;
+  margin-top: 6px!important;
+  margin-bottom: 0!important;
+  padding-bottom: 10px;
+  font-size: 1.25rem;
+}
+page-home ion-navbar ion-col ion-avatar img {
+  margin: auto!important;
+  display: inline-block!important;
+}
+page-home .row-border {
+  border-bottom: 1px solid #C7C7C7;
+}
+page-home .col-border {
+  border-left: 1px solid #C7C7C7;
+}
+page-home ion-content {
+  background-color: #fff!important;
+}
+page-home .scroll-content {
+  overflow-y: hidden;
+}
+page-home #top-row {
+  height: 28%}
+page-home #bottom-row {
+  height: 70%}
+page-home .slider-img {
+  height: auto;
+}
+@media screen and (max-width:767px) {
+  page-home .slider-img {
+  height: 180px;
+}
+page-home #top-row {
+  height: 32%}
+page-home #bottom-row {
+  height: 67%}
+}@media screen and (max-width:350px) {
+  page-home .slider-img {
+  height: 150px;
+}
+}page-home hr.custom {
+  border: 0;
+  margin: 0;
+  height: 1px;
+  background-image: -webkit-gradient(linear, right top, left top, from(#f0f0f0), color-stop(#D1D1D1), to(#f0f0f0));
+  background-image: linear-gradient(-90deg, #f0f0f0, #D1D1D1, #f0f0f0);
+  background-color: inherit!important;
+}
+page-home .bottom-box:after, page-home .top-box:before {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 1px;
+  height: 100%}
+page-home .bottom-box:after {
+  bottom: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#D1D1D1), to(transparent));
+  background: linear-gradient(to bottom, #D1D1D1 0, transparent 100%);
+}
+page-home .top-box:before {
+  top: 0;
+  background: -webkit-gradient(linear, left bottom, left top, from(#D1D1D1), to(transparent));
+  background: linear-gradient(to top, #D1D1D1 0, transparent 100%);
+}
+page-tellme ion-content ion-card ion-card-header {
+  color: #c4ab55 !important;
+}
+
+page-home .slide-image {
+    height: 180px;
+}
+
