@@ -99,8 +99,8 @@ export class FurniturePage {
   }
 
   requildFields() {
-    return !this.furniture.AssetType ||
-      !this.furniture.Notes ||
+    debugger;
+    return !this.furniture.Notes ||
       !this.furniture.Items.length ||
       !this.furniture.Day ||
       !this.furniture.Hour ||
