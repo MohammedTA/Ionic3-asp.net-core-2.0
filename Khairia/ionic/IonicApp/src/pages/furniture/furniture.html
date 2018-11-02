@@ -28,9 +28,9 @@
         </ion-col>
         <ion-col col-8="">
           <ion-list radio-group formControlName="cat" [(ngModel)]="selectedCatId">
-            <ion-item *ngFor='let item of categories'>
-              <ion-label>{{item.categoryname}} </ion-label>
-              <ion-radio (click)="getItems($event)" value="{{item.catid}}"></ion-radio>
+            <ion-item *ngFor='let item of categories' (click)="getItems(item.catid)">
+              <ion-label>{{item.categoryname}}</ion-label>
+              <ion-radio (click)="getItems(item.catid)" value="{{item.catid}}"></ion-radio>
             </ion-item>
           </ion-list>
         </ion-col>
@@ -90,7 +90,7 @@
         </ion-col>
         <ion-col col-7>
           
-          <ion-datetime min="{{minDate}}" max="2030" placeholder="اضغط هنا لإختيار التاريخ" formControlName="day" displayFormat="DD.MM.YYYY" [(ngModel)]="furniture.Day">
+          <ion-datetime min="2018-11-02" max="2030" placeholder="اضغط هنا لإختيار التاريخ" formControlName="day" displayFormat="DD.MM.YYYY" [(ngModel)]="furniture.Day">
           </ion-datetime>
         </ion-col>
       </ion-row>
@@ -156,7 +156,7 @@
           <ion-label class="label label-md">الجوال</ion-label>
         </ion-col>
         <ion-col col-7>
-          <ion-input  formControlName="Jawwal" style="direction:rtl;" [(ngModel)]="furniture.Mobile" placeholder="05XXXXXXXX" type="number"
+          <ion-input maxlength="10"  formControlName="Jawwal" style="direction:rtl;" [(ngModel)]="furniture.Mobile" placeholder="05XXXXXXXX" type="tel"
             class="input input-md ng-valid ng-touched ng-dirty">
           </ion-input>
         </ion-col>
@@ -169,7 +169,7 @@
           <ion-label class="label label-md">الهاتف</ion-label>
         </ion-col>
         <ion-col col-7>
-          <ion-input formControlName="Phone" [(ngModel)]="furniture.Phone" style="direction:rtl;" placeholder="01XXXXXXXX" type="number"
+          <ion-input maxlength="10" formControlName="Phone" [(ngModel)]="furniture.Phone" style="direction:rtl;" placeholder="01XXXXXXXX" type="tel"
             class="input input-md ng-valid ng-touched ng-dirty">
           </ion-input>
         </ion-col>

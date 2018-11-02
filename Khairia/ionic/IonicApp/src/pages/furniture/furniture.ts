@@ -31,7 +31,7 @@ export class FurniturePage {
   private todo: FormGroup;
   selectedCatId: number;
   HourList: any;
-  minDate: any;
+  minDate: string;
 
   assettype: FormGroup;
   Note: FormGroup;
@@ -161,7 +161,7 @@ export class FurniturePage {
     var mm = today.getMonth() + 1; //January is 0!
     var formatmm = mm < 10 ? `0${mm}` : `${mm}`
     var yyyy = today.getFullYear();
-    this.minDate = `${yyyy}-${formatmm}-${dd}`;
+    this.minDate = `${dd}.${formatmm}.${yyyy}`;
   }
 
   getCategoies() {
@@ -206,7 +206,8 @@ export class FurniturePage {
     );
   }
 
-  getItems(cat) {
+  getItems(catId) {
+    this.selectedCatId = catId;
     let loader = this.loadingCtrl.create({
       content: "يرجى الانتظار .. "
     });

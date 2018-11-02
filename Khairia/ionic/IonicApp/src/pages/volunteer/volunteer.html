@@ -38,7 +38,7 @@
         <ion-label >الجوال</ion-label>
       </ion-col>
       <ion-col col-7>
-        <ion-input formControlName="Jawwal" placeholder="05XXXXXXXX" [(ngModel)]="volunteer.Mobile"  style="direction:rtl;" type="number" >
+        <ion-input maxlength="10" formControlName="Jawwal" placeholder="05XXXXXXXX" [(ngModel)]="volunteer.Mobile"  style="direction:rtl;" type="tel" >
         </ion-input>
       </ion-col>
     </ion-row>

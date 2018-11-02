@@ -42,7 +42,7 @@
           <ion-label> رقم الجوال</ion-label>
         </ion-col>
         <ion-col col-8>
-          <ion-input name="Phone" placeholder="05XXXXXXXX" [(ngModel)]="needy.Phone" placeholder="رقم الجوال" type="number">
+          <ion-input maxlength="10" name="Phone" placeholder="05XXXXXXXX" [(ngModel)]="needy.Phone" placeholder="رقم الجوال" type="tel">
           </ion-input>
         </ion-col>
       </ion-row>
@@ -76,7 +76,7 @@
           <ion-label> رقم الجوال</ion-label>
         </ion-col>
         <ion-col col-8>
-          <ion-input name="Senderphone" placeholder="05XXXXXXXX" [(ngModel)]="needy.Senderphone" placeholder="رقم الجوال" type="number">
+          <ion-input maxlength="10" name="Senderphone" placeholder="05XXXXXXXX" [(ngModel)]="needy.Senderphone" placeholder="رقم الجوال" type="tel">
           </ion-input>
         </ion-col>
       </ion-row>

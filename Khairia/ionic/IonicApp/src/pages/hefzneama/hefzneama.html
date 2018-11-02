@@ -64,7 +64,7 @@
           <ion-label class="label label-md">الجوال</ion-label>
         </ion-col>
         <ion-col col-7>
-          <ion-input name="Jawwal" [(ngModel)]="food.Mobile" style="direction:rtl;" placeholder="05XXXXXXXX" type="number" class="input input-md ng-valid ng-touched ng-dirty">
+          <ion-input maxlength="10" name="Jawwal" [(ngModel)]="food.Mobile" style="direction:rtl;" placeholder="05XXXXXXXX" type="tel" class="input input-md ng-valid ng-touched ng-dirty">
           </ion-input>
         </ion-col>
       </ion-row>
@@ -76,7 +76,7 @@
           <ion-label class="label label-md">الهاتف</ion-label>
         </ion-col>
         <ion-col col-7>
-          <ion-input name="Phone" [(ngModel)]="food.Phone" style="direction:rtl;" placeholder="01XXXXXXXX" type="number" class="input input-md ng-valid ng-touched ng-dirty">
+          <ion-input maxlength="10" name="Phone" [(ngModel)]="food.Phone" style="direction:rtl;" placeholder="01XXXXXXXX" type="tel" class="input input-md ng-valid ng-touched ng-dirty">
           </ion-input>
         </ion-col>
       </ion-row>

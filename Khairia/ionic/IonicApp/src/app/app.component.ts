@@ -16,9 +16,9 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
-    { title: 'حفظ النعمة', component: 'HefzneamaPage', icon: 'assets/img/side-menu-icons/1.png' },
-    { title: 'جلب الاثاث', component: 'FurniturePage', icon: 'assets/img/side-menu-icons/2.png' },
-    { title: 'التطوع', component: 'VolunteerPage', icon: 'assets/img/side-menu-icons/3.png' },
+    { title: 'هل لديك فائض طعام ؟', component: 'HefzneamaPage', icon: 'assets/img/side-menu-icons/1.png' },
+    { title: 'تبرع بأثاثك القديم', component: 'FurniturePage', icon: 'assets/img/side-menu-icons/2.png' },
+    { title: 'تطوع معنا', component: 'VolunteerPage', icon: 'assets/img/side-menu-icons/3.png' },
     { title: 'خدمات المستخدمين', component: 'ServicesPage', icon: 'assets/img/side-menu-icons/4.png' },
     { title: 'المساعدات للمحتاجين الجدد', component: 'RequestHelpPage', icon: 'assets/img/side-menu-icons/5.png' },
     { title: 'دلني على محتاج', component: 'TellmePage', icon: 'assets/img/side-menu-icons/6.png' },

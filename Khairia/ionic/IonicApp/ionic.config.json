@@ -1,18 +1,17 @@
 {
   "name": "IonicApp",
-  "app_id": "",
-  "type": "ionic-angular",
   "integrations": {
     "cordova": {}
   },
+  "type": "ionic-angular",
   "proxies": [
-   {
-     "path": "/local/api",
-     "proxyUrl": "http://localhost:51302/api"
-   },
-   {
-     "path": "/online/api",
-     "proxyUrl": "http://daralkhair-001-site1.mysitepanel.net/api"
-   }
- ]
+    {
+      "path": "/local/api",
+      "proxyUrl": "http://localhost:51302/api"
+    },
+    {
+      "path": "/online/api",
+      "proxyUrl": "http://daralkhair-001-site1.mysitepanel.net/api"
+    }
+  ]
 }

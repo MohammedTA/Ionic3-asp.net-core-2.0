@@ -16,6 +16,7 @@ import { Api } from '../providers/providers';
 import { MyApp } from './app.component';
 import { Geolocation } from '@ionic-native/geolocation';
 import { GoogleMaps } from '@ionic-native/google-maps';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 
 // The translate loader needs to know where to load i18n files
@@ -71,6 +72,7 @@ export function provideSettings(storage: Storage) {
   providers: [
     Api,
     Items,
+    SocialSharing,
     Zones, 
     Hours,   
     User,

@@ -44,7 +44,7 @@ export class HefzneamaPage {
   lat: number;
   lng: number;
   HourList: any;
-  minDate:any;
+  minDate:string;
   //@ViewChild('map') mapElement: ElementRef;
   // map: any;
 

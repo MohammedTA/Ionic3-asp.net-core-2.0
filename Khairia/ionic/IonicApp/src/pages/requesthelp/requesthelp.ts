@@ -14,7 +14,7 @@ import { Help } from '../../models/help';
 export class RequestHelpPage {
   zonesItems: Zone[];
   help: Help = new Help();
-  minDate: any;
+  minDate: string;
   constructor(public navCtrl: NavController,
     public zones: Zones,
     public modalCtrl: ModalController,
